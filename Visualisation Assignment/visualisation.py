@@ -180,6 +180,7 @@ def subPlots(series_name):
     # sub plot 4
     plt.subplot(2, 2, 4)
     plt.bar(data4['year'], data4[series_name], label= 'Serbia', color='pink')
+    plt.xlim('2006', '2014')
     plt.xlabel('Years', fontsize = 15)
     plt.ylabel('No of Procedures', fontsize = 15)
     plt.legend()
