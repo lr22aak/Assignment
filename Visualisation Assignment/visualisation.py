@@ -108,8 +108,12 @@ def linePlot(series_name):
     plt.plot(data3['year'], data3[series_name], label = 'Uganda')
     plt.plot(data4['year'], data4[series_name], label = 'Serbia')
     
-    # plt.hist(populationGrowthData["Country Name"], density = True, label= 'America')
-    plt.xlim('2006', '2014')
+    plt.xlim('2006', '2014') # setting x-axis limits
+    
+    # x-axis and y-axis labels
+    plt.xlabel('Years', fontsize = 20)
+    plt.ylabel('No of Procedures', fontsize = 20)
+    
     
     plt.title(series_name + " Line Plot", fontsize = 30) # Title of the Series Name
     plt.rcParams["figure.figsize"] = (18,10.5) # to make visulisation of clear plot
@@ -153,24 +157,31 @@ def subPlots(series_name):
     plt.subplot(2, 2, 1)
     plt.bar(data1['year'], data1[series_name], label= 'Guyana')
     plt.xlim('2006', '2014')
+    plt.xlabel('Years', fontsize = 15)
+    plt.ylabel('No of Procedures', fontsize = 15)
     plt.legend()
     
     # sub plot 2
     plt.subplot(2, 2, 2)
     plt.bar(data2['year'], data2[series_name], label= 'United Kingdom', color='orange')
     plt.xlim('2006', '2014')
+    plt.xlabel('Years', fontsize = 15)
+    plt.ylabel('No of Procedures', fontsize = 15)
     plt.legend()
     
     # sub plot 3
     plt.subplot(2, 2, 3)
     plt.bar(data3['year'], data3[series_name], label= 'Uganda', color='green')
     plt.xlim('2006', '2014')
+    plt.xlabel('Years', fontsize = 15)
+    plt.ylabel('No of Procedures', fontsize = 15)
     plt.legend()
     
     # sub plot 4
     plt.subplot(2, 2, 4)
     plt.bar(data4['year'], data4[series_name], label= 'Serbia', color='pink')
-    plt.xlim('2006', '2014')
+    plt.xlabel('Years', fontsize = 15)
+    plt.ylabel('No of Procedures', fontsize = 15)
     plt.legend()
     
     plt.savefig(series_name + ' Sub_Plot.png') # to save the plots
@@ -210,6 +221,10 @@ def violinPlots(series_name):
     data = [data1[series_name], data2[series_name], data3[series_name], data4[series_name]]
     
     plt.violinplot(data, showmedians=True)
+    
+    # x-axis and y-axis labels
+    plt.xlabel('Country Names', fontsize = 20)
+    plt.ylabel('No of Procedures', fontsize = 20)
     
     plt.xticks([1,2,3,4], ['Guyana','United Kingdom','Uganda','Serbia']) # to change the x-axis values
     
